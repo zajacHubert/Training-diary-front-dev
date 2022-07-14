@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Navigate, Route, Routes } from "react-router-dom";
+import { TrainingsListView } from "./views/TrainingsListView";
+import { AddTrainingView } from './views/AddTrainingView';
+import { EditTrainingView } from './views/EditTrainingView';
+import { Header } from './components/Header';
+import { SingleTrainingView } from './views/SingleTrainingView';
+import { NotFoundView } from './views/NotFoundView';
 
-function App() {
+import Container from '@mui/material/Container';
+
+
+export const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Navigate to="/training/add-form" replace />} />
+        <Route path="/training/add-form" element={<AddTrainingView />} />
+        <Route path="/training/edit-form/:date/:title" element={<EditTrainingView />} />
+        <Route path="/training" element={<TrainingsListView />} />
+        <Route path="/training/:date/:title" element={<SingleTrainingView />} />
+        <Route path="*" element={<NotFoundView />} />
+      </Routes>
+    </Container>
   );
 }
 
-export default App;
+
