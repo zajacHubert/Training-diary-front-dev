@@ -1,3 +1,12 @@
+Development version of Training-diary-front
+
+Commit hisotory and detailed description in the repository Training-diary-front-prod
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
