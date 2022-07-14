@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "types": [
-        "../back/types"
+        "../Training-diary-back-dev/types"
       ]
     }
   }
